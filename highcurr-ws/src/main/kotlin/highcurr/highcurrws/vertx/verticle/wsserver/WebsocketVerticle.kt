@@ -19,7 +19,6 @@ class WebsocketVerticle: AbstractVerticle() {
 
     @Autowired lateinit var pluginManager: PluginManager
 
-    data class EventClass(var body: String)
 
     override fun start(startFuture: Future<Void>) {
         val router = createRouter()

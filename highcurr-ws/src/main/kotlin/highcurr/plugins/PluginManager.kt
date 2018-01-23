@@ -2,6 +2,7 @@ package highcurr.plugins
 
 import com.coveo.nashorn_modules.FilesystemFolder
 import com.coveo.nashorn_modules.Require
+import highcurr.highcurrws.vertx.verticle.wsserver.EventClass
 import highcurr.highcurrws.vertx.verticle.wsserver.WebsocketVerticle
 import jdk.nashorn.api.scripting.NashornScriptEngine
 import org.springframework.stereotype.Component
@@ -33,12 +34,12 @@ class PluginManager {
         }
     }
 
-    fun runPlugins(event: String, eventClass: WebsocketVerticle.EventClass): WebsocketVerticle.EventClass {
+    fun runPlugins(event: String, eventClass: EventClass): EventClass {
         var eventClass1 = eventClass
         // TODO: Load scripts into memory on start and only call invokeFunction
         for(entry in plugins) {
             try {
-                eventClass1 = entry.value.invokeFunction(event, eventClass1) as WebsocketVerticle.EventClass
+                eventClass1 = entry.value.invokeFunction(event, eventClass1) as EventClass
             } catch(e: Exception) {
                 println("Unable to apply ${event} on ${entry.key}: ${e.message}")
             }

@@ -14,6 +14,17 @@ Then open the URL (http://localhost:8087/static/index.html) in a websocket suppo
 
 ## Plugins
     
-You can reload plugins with the following URL:
+The chat consists of event-hooked Javascript plugins that are loaded, compiled and cached in the Java.
+
+To create a plugin, create a javascript file in the `:highcurr-plugins/src/chat` folder.
+
+Add a function to your plugin named with the event hook it should be called for: i.e. onBeforePublishClient.
+
+The function should accept and return the same object, 
+an [EventClass](highcurr-ws/src/main/kotlin/highcurr/highcurrws/vertx/verticle/wsserver/EventClass.kt)
+
+    {"body": ""}
+
+You can reload plugins without restarting the server with the following URL:
 
     http://localhost:8087/reloadPlugins
