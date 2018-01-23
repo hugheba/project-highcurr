@@ -1,0 +1,2 @@
+rootProject.name = 'project-highcurr'
+include 'highcurr-ws', 'highcurr-plugins'
