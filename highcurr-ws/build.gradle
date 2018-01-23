@@ -44,3 +44,10 @@ dependencies {
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+
+bootRun {
+    environment "APP_HOME", "${projectDir}/src/main/resources/"
+    environment "HC_PLUGINS_PATH", "${project(":highcurr-plugins").projectDir}/src"
+    environment "HC_PLUGINS_REQUIRE_PATH", "${project(":highcurr-plugins").projectDir}/"
+}

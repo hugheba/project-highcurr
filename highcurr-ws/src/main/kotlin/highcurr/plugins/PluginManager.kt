@@ -13,8 +13,8 @@ import javax.script.ScriptEngineManager
 @Component
 class PluginManager {
 
-    val PLUGINS_PATH: String = "/Users/bhughes/IdeaProjects/project-highcurr/highcurr-plugins/src"
-    val REQUIRE_PATH: String = "/Users/bhughes/IdeaProjects/project-highcurr/highcurr-plugins"
+    val PLUGINS_PATH: String = System.getenv("HC_PLUGINS_PATH")
+    val REQUIRE_PATH: String = System.getenv("HC_PLUGINS_REQUIRE_PATH")
     val plugins: MutableMap<String, Invocable> = mutableMapOf()
 
     init {
