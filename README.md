@@ -16,7 +16,7 @@ Then open the URL (http://localhost:8087/static/index.html) in a websocket suppo
     
 The chat consists of event-hooked Javascript plugins that are loaded, compiled and cached in the Java.
 
-To create a plugin, create a javascript file in the `:highcurr-plugins/src/chat` folder.
+To create a plugin, create a javascript file in the [:highcurr-plugins/src/chat](highcurr-plugins/src/chat) folder.
 
 Add a function to your plugin named with the event hook it should be called for: i.e. onBeforePublishClient.
 
