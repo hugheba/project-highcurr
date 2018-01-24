@@ -10,7 +10,16 @@ To start the server, run the following command:
 
     ./gradlew bootRun
     
-Then open the URL [http://localhost:8087/static/index.html](http://localhost:8087/static/index.html) in a websocket supported browser:
+Then open the URL [http://localhost:8087/static/index.html](http://localhost:8087/static/index.html) in a 
+websocket supported browser:
+
+*You must generate a [Google Cloud API Key](https://cloud.google.com/video-intelligence/docs/common/auth) 
+and place it in the root of the project as the file `google_cloud.json` in order to use the 
+translate Javascript plugin.*
+
+*Alternatively, the plugin can be disabled by renaming the files extension
+[:highcurr-plugins/src/chat/100_event-translate.js](highcurr-plugins/src/chat/100_event-translate.js) to 
+`100_event-translate.js_`.*
 
 ## Plugins
     
