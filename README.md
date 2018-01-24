@@ -2,6 +2,8 @@
 
 Vertx based high-concurrency websocket application with reloadable Javascript plugins.
 
+The premise is keep the server running and externalize business logic to easy to alter Javascript modules.
+
 ## Running
 
 To start the server, run the following command:

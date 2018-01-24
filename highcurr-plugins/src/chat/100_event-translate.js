@@ -1,7 +1,9 @@
 var services = services;
 function onBeforePublishClient(obj) {
     // Translate body
-    obj.body = services.get('translateService').transalate(obj.body, 'en', 'es');
+    var origText = obj.body;
+    var translateService = services.get('translateService');
+    obj.body = translateService.transalate(origText, 'en', 'es') + ' (' + origText + ')';
 
     return obj
 }
