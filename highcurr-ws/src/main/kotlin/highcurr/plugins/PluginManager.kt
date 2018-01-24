@@ -55,7 +55,6 @@ class PluginManager {
 
     fun runPlugins(event: String, eventClass: EventClass): EventClass {
         var eventClass1 = eventClass
-        eventClass1.services = services
         // TODO: Load scripts into memory on start and only call invokeFunction
         for(entry in plugins) {
             try {

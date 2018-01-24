@@ -26,13 +26,13 @@ class WebsocketVerticle: AbstractVerticle() {
 
         eb.consumer<Any>("chat.to.server").handler({ message: Message<Any> ->
             vertx.executeBlocking({future ->
-                var eventClass = EventClass(body = message.body() as String)
+                var eventClass = EventClass(msgTextInput = message.body() as String)
                 eventClass = pluginManager.runPlugins("onBeforePublishClient", eventClass)
                 future.complete(eventClass)
             }, { res: AsyncResult<EventClass> ->
                 var timestamp = java.text.DateFormat.getDateTimeInstance(java.text.DateFormat.SHORT, java.text.DateFormat.MEDIUM)
                         .format(java.util.Date.from(java.time.Instant.now()))
-                eb.publish("chat.to.client", "${timestamp}: ${res.result().body}")
+                eb.publish("chat.to.client", "${timestamp}: ${res.result().msgTextOutput}")
             })
         })
 

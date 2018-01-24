@@ -3,7 +3,7 @@ var _ = require("lodash/lodash");
 
 function onBeforePublishClient(obj) {
     // Capitalize body
-    obj.body = obj.body.toUpperCase();
+    obj.msgTextOutput = obj.msgTextOutput.toUpperCase();
 
     return obj
 }
