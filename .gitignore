@@ -160,3 +160,4 @@ hs_err_pid*
 .idea
 .vertx
 *.iml
+google_cloud.json

@@ -41,7 +41,7 @@ dependencies {
 
     compile("io.vertx:vertx-web:${vertxVersion}")
     compile("com.coveo:nashorn-commonjs-modules:1.0.9")
-
+    compile("com.google.cloud:google-cloud-translate:1.14.0")
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
@@ -50,4 +50,5 @@ bootRun {
     environment "APP_HOME", "${projectDir}/src/main/resources/"
     environment "HC_PLUGINS_PATH", "${project(":highcurr-plugins").projectDir}/src"
     environment "HC_PLUGINS_REQUIRE_PATH", "${project(":highcurr-plugins").projectDir}/"
+    environment "GOOGLE_APPLICATION_CREDENTIALS", "${rootProject.projectDir}/google_cloud.json"
 }
